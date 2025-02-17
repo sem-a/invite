@@ -10,7 +10,6 @@ const app = express();
 
 app.use(cors());
 
-// Статические файлы
 app.use(express.static("public"));
 
 // Отправляем файл index.html при запросе к /
