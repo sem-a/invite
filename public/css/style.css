@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "Bubble";
+  src: url(../font/cats-party-glare.otf);
+}
+@font-face {
+  font-family: "Text";
+  src: url(../font/ofont.ru_Maki\ Sans.ttf);
+}
+
+body {
+  background-color: #fefbf4;
+  font-family: "Text";
+}
+
+.container {
+  padding: 0 21px;
+}
+
+.first {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.nas {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+}
+.img__container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.first__bottom {
+  width: 100%;
+}
+.kolp {
+  position: absolute; /* Позволяем колпочку двигаться */
+  z-index: 20;
+  transform: translateY(-60%);
+  right: 15%;
+  opacity: 0; /* Исходная непрозрачность */
+  transition: opacity 2s ease;
+}
+
+.kolp.visible {
+  opacity: 1; /* Полная видимость */
+}
+
+.title {
+  opacity: 0;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Bubble";
+  font-size: 128px;
+  z-index: 40;
+  color: #e8aebc;
+  transition: opacity 2s ease;
+}
+
+.title.visible {
+  opacity: 1; /* Полная видимость */
+}
+
+.second {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 168px;
+}
+.item {
+  margin-top: 42px;
+}
+.bant {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 200;
+  transform: translateY(-30%);
+}
+p.text {
+  padding: 14px;
+  font-size: 20px;
+  border: 10px double #e8aebc;
+  text-align: center;
+  color: #da8d9f;
+}
+
+p.text span {
+  text-decoration: underline;
+}
+
+.three {
+  position: relative;
+  width: 100vw;
+  padding-top: 168px;
+  z-index: 200;
+  padding-bottom: 105px;
+}
+
+h2.subtitle {
+  font-family: "Bubble";
+  font-size: 36px;
+  text-align: center;
+  color: #e8aebc;
+}
+
+img.dress {
+  width: 84px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  margin-top: 105px;
+}
+
+.form-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input.form-input {
+  width: 100%;
+  font-size: 20px;
+  background-color: white;
+  border-radius: 14px;
+  padding: 14px;
+  /* box-shadow: 0px 0px 10px rgba(218, 141, 159, 0.5); */
+  border: 4px solid #da8d9f;
+}
+
+button.btn {
+  margin-top: 21px;
+  width: 100%;
+  font-size: 20px;
+  padding: 14px;
+  border: 4px solid #da8d9f;
+  border-radius: 14px;
+  color: #da8d9f;
+  transition: all 0.5s ease 0s;
+}
+
+button.btn:hover {
+  background-color: #da8d9f;
+  color: white;
+}
+
+.guest-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+}
