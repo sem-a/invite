@@ -22,7 +22,7 @@ document.getElementById("btn").addEventListener("click", function (e) {
 
   console.log(name);
   // Отправка POST-запроса
-  fetch("http://sem-a-invite-e91a.twc1.net/api/add", {
+  fetch("http://sem-a-invite-1790.twc1.net/api/add", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
