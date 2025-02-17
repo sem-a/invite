@@ -1,32 +1,50 @@
 const { prisma } = require("../prisma/prisma-client");
 
+/**
+ * @route /api/add
+ * @method POST
+ * @desc добавление гостя
+ * @access Public
+ */
 const add = async (req, res) => {
   const { name } = req.body;
 
   if (!name) {
-    res.status(400).json({ message: "Заполните обязательные поля!" });
+    return res
+      .status(400)
+      .json({ message: "Заполните все обязательные поля!" });
   }
 
   try {
-    const guest = prisma.guest.create({
+    const guest = await prisma.guest.create({
       data: {
         name,
       },
     });
 
-    res.status(200).json(guest);
+    console.log(guest);
+
+    return res.status(200).json(guest);
   } catch (err) {
-    res.status(500).json(err);
+    console.log(err);
+    return res.status(500).json({ message: err.message });
   }
 };
 
-const get = async () => {
+/**
+ * @route /api/get
+ * @method GET
+ * @desc получить всех гостей
+ * @access Public
+ */
+const get = async (req, res) => {
   try {
-    const guests = prisma.guest.findMany();
+    const guests = await prisma.guest.findMany();
 
-    res.status(200).json(guests);
+    return res.status(200).json(guests);
   } catch (err) {
-    res.status(500).json(err);
+    console.log(err);
+    return res.status(500).json({ message: err.message });
   }
 };
 

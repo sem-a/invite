@@ -1,10 +1,11 @@
-var express = require("express");
+const express = require("express");
 const { add, get } = require("../controllers");
-var router = express.Router();
+const router = express.Router();
 
-/* GET home page. */
+// /api/add
 router.post("/add", add);
 
+// /api/get
 router.get("/get", get);
 
 module.exports = router;
