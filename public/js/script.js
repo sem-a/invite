@@ -31,7 +31,10 @@ document.getElementById("btn").addEventListener("click", function (e) {
   })
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Ошибка сети");
+        // Если ответ не успешный, создаем ошибку с телом ответа
+        return response.text().then((text) => {
+          throw new Error(`Ошибка сети: ${text}`); // Используем текст ошибки
+        });
       }
       return response.json(); // или response.text(), если ожидается текст
     })
@@ -40,7 +43,7 @@ document.getElementById("btn").addEventListener("click", function (e) {
       window.location.href = "/send";
     })
     .catch((error) => {
-      console.error("Ошибка:", error);
-      alert("Произошла ошибка при отправке данных");
+      console.error("Ошибка:", error); // Вывод полной ошибки
+      alert(`Произошла ошибка при отправке данных: ${error.message}`); // Выводим полное сообщение об ошибке
     });
 });
