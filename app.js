@@ -29,6 +29,6 @@ app.get("/send", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "send.html"));
 });
 
-app.use("/", require("./routes/index"));
+app.use("/api", require("./routes/index"));
 
 module.exports = app;
