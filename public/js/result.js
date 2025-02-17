@@ -1,7 +1,7 @@
 // Функция для получения списка гостей
 function fetchGuestList() {
   // Выполняем GET-запрос на /api/get
-  fetch("http://sem-a-invite-1790.twc1.net/api/get")
+  fetch("http://sem-a-invite-b633.twc1.net/api/get")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Сеть ответила с ошибкой: " + response.status);
